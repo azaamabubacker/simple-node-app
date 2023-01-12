@@ -3,9 +3,11 @@ const express = require("express");
 const router = express.Router();
 
 const rootDir = require("../utill/path");
+const adminData = require("./admin");
 
-router.get("/users", (req, res, next) => {
-  res.sendFile(path.join(rootDir, "views", "add-product.html"));
+router.get("/", (req, res, next) => {
+  console.log(adminData.products);
+  res.sendFile(path.join(rootDir, "views", "shop.html"));
 });
 
 module.exports = router;
